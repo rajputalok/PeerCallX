@@ -1,0 +1,169 @@
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background: url("/background.png") center/cover no-repeat;
+  color: white;
+}
+
+.landingPageContainer nav {
+  padding-inline: 1.2rem;
+  padding-block: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.landingPageContainer nav h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.landingPageContainer nav .navlist {
+  display: flex;
+  gap: 1.6rem;
+  cursor: pointer;
+
+}
+
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  height: 80vh;
+  align-items: center;
+}
+
+.landingMainContainer>div:nth-child(1) {
+  font-size: 2.2rem;
+}
+
+.landingMainContainer>div:nth-child(1) div[role='button'] {
+  background: #D97500;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 20px;
+  margin-top: 1.9rem;
+}
+
+.landingMainContainer>div:nth-child(1) div[role='button'] a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.7rem;
+}
+
+.landingMainContainer>div:nth-child(2) img {
+  height: 70vh;
+  width: auto;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+  text-align: center;
+
+}
+.meetContainer {
+  display: flex;
+  padding-inline: 20px;
+  height: 80vh;
+  gap: 10vw;
+  justify-content: center;
+}
+
+
+
+.leftPanel {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+.rightPanel {
+  display: flex;
+  align-items: center;
+}
+
+.rightPanel > img {
+  width: 30vw;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Home page enhancements */
+.navBar {
+  background: linear-gradient(90deg, rgba(255,152,57,0.06), rgba(0,0,0,0.06));
+  backdrop-filter: blur(6px);
+  padding: 16px 28px;
+  border-radius: 10px;
+  margin: 18px;
+  align-items: center;
+}
+
+.navBar h2 {
+  color: #FF9839;
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.4px;
+}
+
+.navBar .nav-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.meetContainer {
+  align-items: center;
+  padding-inline: 36px;
+}
+
+.leftPanel {
+  background: #ffffffee;
+  color: #1b1b1b;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15,15,15,0.08);
+  min-width: 360px;
+  max-width: 520px;
+}
+
+.leftPanel h2 {
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+}
+
+.leftPanel .controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.leftPanel input, .leftPanel .MuiInputBase-input {
+  min-width: 220px;
+}
+
+.leftPanel button, .navBar button {
+  text-transform: none;
+  background: #FF9839;
+  color: white;
+}
+
+.rightPanel > img {
+  box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 900px) {
+  .landingMainContainer, .meetContainer {
+    flex-direction: column-reverse;
+    gap: 1.2rem;
+    padding-inline: 1.2rem;
+    height: auto;
+  }
+
+  .rightPanel > img { width: 80vw }
+  .leftPanel { width: 92vw; max-width: none }
+}
