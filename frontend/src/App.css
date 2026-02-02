@@ -1,9 +1,9 @@
-.landingPageContainer {
+/* .landingPageContainer {
   width: 100vw;
   height: 100vh;
-  background: url("/frontend/public/background.png") center/cover no-repeat;
-  color: white;
-}
+  /* background: url("/frontend/public/background.png") center/cover no-repeat; */
+  /* color: white; */
+/* } */
 
 .landingPageContainer nav {
   padding-inline: 1.2rem;
