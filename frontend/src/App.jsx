@@ -6,20 +6,11 @@ import { AuthProvider } from './contexts/AuthContext.jsx';
 import VideoMeetComponent from './pages/VideoMeet.jsx';
 import HomeComponent from './pages/home.jsx';
 import History from './pages/history.jsx';
-import background from './assets/background.png'; 
 
 function App() {
 
   return (
      <div className='App'>
-        style={{
-          backgroundImage: `url(${background})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          minHeight: '100vh',
-          width: '100vw',
-        }}
         <Router>
           <AuthProvider>
           <Routes>
