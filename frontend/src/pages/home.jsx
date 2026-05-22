@@ -39,6 +39,10 @@ function HomeComponent() {
                     </IconButton>
                     <p>History</p>
 
+                    <Button onClick={() => navigate('/') }>
+                        Go to Home Page
+                    </Button>
+
                     <Button onClick={() => {
                         localStorage.removeItem("token")
                         navigate("/auth")

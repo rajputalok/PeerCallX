@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../contexts/AuthContext.jsx';
 import { Snackbar } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -38,6 +39,7 @@ export default function Authentication() {
     const [open, setOpen] = React.useState(false)
 
 
+    const navigate = useNavigate();
     const { handleRegister, handleLogin } = React.useContext(AuthContext);
 
     let handleAuth = async () => {
@@ -99,6 +101,14 @@ export default function Authentication() {
                             <LockOutlinedIcon />
                         </Avatar>
 
+                        <Button
+                            variant="outlined"
+                            size="small"
+                            onClick={() => navigate('/')}
+                            sx={{ mt: 1, mb: 2 }}
+                        >
+                            Go to Home Page
+                        </Button>
 
                         <div>
                             <Button variant={formState === 0 ? "contained" : ""} onClick={() => { setFormState(0) }}>
@@ -159,6 +169,11 @@ export default function Authentication() {
                             >
                                 {loading ? "Please wait..." : (formState === 0 ? "Login" : "Register")}
                             </Button>
+                            {loading && (
+                                <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2, textAlign: 'center' }}>
+                                    Please wait, this may take a moment.
+                                </Typography>
+                            )}
 
                         </Box>
                     </Box>

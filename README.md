@@ -88,11 +88,15 @@ Open the local Vite URL shown in the terminal (typically `http://localhost:5173`
 
 - `npm run dev` - Start backend with `nodemon`
 - `npm start` - Start backend with Node
-  
+- `npm run prod` - Start backend with PM2
+
 ### Frontend
 
 - `npm run dev` - Start Vite development server
 - `npm run build` - Build production assets
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build locally
+
 
 ## API Endpoints
 
@@ -106,6 +110,7 @@ Open the local Vite URL shown in the terminal (typically `http://localhost:5173`
 - The frontend currently toggles backend environment based on `frontend/src/environment.js`.
 - WebRTC requires camera/microphone permissions from the browser.
 - For deployment, make sure `MONGO_URL` and production backend URLs are configured correctly.
+
 
 ## Live Link
 https://peercallx-frontend.onrender.com/

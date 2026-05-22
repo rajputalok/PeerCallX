@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import io from "socket.io-client";
 import { Badge, IconButton, TextField } from '@mui/material';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import VideocamOffIcon from '@mui/icons-material/VideocamOff'
 import styles from "../styles/videoComponent.module.css";
@@ -57,6 +58,7 @@ export default function VideoMeetComponent() {
     const videoRef = useRef([])
 
     let [videos, setVideos] = useState([])
+    const navigate = useNavigate();
 
     // TODO
     // if(isChrome() === false) {
@@ -485,7 +487,7 @@ export default function VideoMeetComponent() {
                     <h2>Enter into Lobby </h2>
                     <TextField id="outlined-basic" label="Username" value={username} onChange={e => setUsername(e.target.value)} variant="outlined" />
                     <Button variant="contained" onClick={connect}>Connect</Button>
-
+                    <Button variant="outlined" sx={{ ml: 1 }} onClick={() => navigate('/')}>Go to Home Page</Button>
 
                     <div>
                         <video ref={localVideoref} autoPlay muted></video>
@@ -527,7 +529,10 @@ export default function VideoMeetComponent() {
                     </div> : <></>}
 
 
-                    <div className={styles.buttonContainers}>
+                    <div className={styles.meetingHeader}>
+                    <Button variant="outlined" onClick={() => navigate('/home')}>Go to Home Page</Button>
+                </div>
+                <div className={styles.buttonContainers}>
                         <IconButton onClick={handleVideo} style={{ color: "white" }}>
                             {(video === true) ? <VideocamIcon /> : <VideocamOffIcon />}
                         </IconButton>

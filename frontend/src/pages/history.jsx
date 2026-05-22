@@ -21,6 +21,11 @@ export default function History() {
     const routeTo = useNavigate();
 
     useEffect(() => {
+        if (!localStorage.getItem("token")) {
+            routeTo('/auth');
+            return;
+        }
+
         const fetchHistory = async () => {
             try {
                 const history = await getHistoryOfUser();
@@ -31,7 +36,7 @@ export default function History() {
         }
 
         fetchHistory();
-    }, [])
+    }, [routeTo, getHistoryOfUser])
 
     let formatDate = (dateString) => {
 
@@ -52,34 +57,24 @@ export default function History() {
             }}>
                 <HomeIcon />
             </IconButton >
+            <Button variant="outlined" onClick={() => routeTo('/home')}>Go to Home Page</Button>
             {
                 (meetings.length !== 0) ? meetings.map((e, i) => {
                     return (
+                        <Card key={i} variant="outlined" sx={{ mb: 2, mx: { xs: 1, sm: 2 }, p: 1 }}>
+                            <CardContent>
+                                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                                    Code: {e.meetingCode}
+                                </Typography>
 
-                        <>
+                                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                    Date: {formatDate(e.date)}
+                                </Typography>
 
-
-                            <Card key={i} variant="outlined">
-
-
-                                <CardContent>
-                                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                        Code: {e.meetingCode}
-                                    </Typography>
-
-                                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                        Date: {formatDate(e.date)}
-                                    </Typography>
-
-                                </CardContent>
-
-
-                            </Card>
-
-
-                        </>
+                            </CardContent>
+                        </Card>
                     )
-                }) : <></>
+                }) : <Typography sx={{ mt: 2, px: 2 }}>No meeting history found.</Typography>
 
             }
 

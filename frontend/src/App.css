@@ -168,3 +168,97 @@
   .rightPanel > img { width: 80vw }
   .leftPanel { width: 92vw; max-width: none }
 }
+
+@media (max-width: 700px) {
+  .landingPageContainer {
+    min-height: 100vh;
+  }
+
+  .landingPageContainer nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+  }
+
+  .landingPageContainer nav h2 {
+    font-size: 1.5rem;
+  }
+
+  .landingPageContainer nav .navlist {
+    width: 100%;
+  }
+
+  .landingMainContainer {
+    padding-inline: 1rem;
+    gap: 1rem;
+  }
+
+  .landingMainContainer>div:nth-child(1) {
+    font-size: 1.6rem;
+  }
+
+  .landingMainContainer>div:nth-child(1) div[role='button'] {
+    padding: 0.9rem 1rem;
+  }
+
+  .landingMainContainer>div:nth-child(2) img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .navBar {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 12px;
+    gap: 1rem;
+  }
+
+  .navBar > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .meetContainer {
+    height: auto;
+  }
+
+  .leftPanel {
+    width: 100%;
+    max-width: none;
+    padding: 20px;
+  }
+
+  .leftPanel .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .leftPanel input, .leftPanel .MuiInputBase-input {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .leftPanel button, .navBar button {
+    width: 100%;
+  }
+
+  .rightPanel {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .rightPanel > img {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .MuiCard-root {
+    width: 92vw;
+    margin: 0 auto 1rem;
+  }
+}
